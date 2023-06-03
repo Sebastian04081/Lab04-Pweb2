@@ -60,7 +60,23 @@ class Picture:
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p sobre la
         figura actual """
-    return Picture(None)
+
+    merged = []
+    upper = p.img
+    under = self.img
+
+    for i in range(len(under)):
+        merged_row = ""
+
+        for j in range(len(under)):
+            if upper[i][j] != under[i][j] and upper[i][j] != " ":
+                merged_row += upper[i][j]
+            else:
+                merged_row += under[i][j]
+        
+        merged.append(merged_row)
+
+    return Picture(merged)
   
   def horizontalRepeat(self, n):
     """ Devuelve una nueva figura repitiendo la figura actual al costado
