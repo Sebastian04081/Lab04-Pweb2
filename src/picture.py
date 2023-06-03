@@ -67,9 +67,12 @@ class Picture:
         la cantidad de veces que indique el valor de n """
     repeated = []
     
-    for _ in range(n):
-        repeated.extend(self.img)
-
+    for row in self.img:
+        repeated_row = []
+        for _ in range(n):
+            repeated_row.extend(row)
+        repeated.append(repeated_row)
+    
     return Picture(repeated)
 
   def verticalRepeat(self, n):
