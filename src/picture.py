@@ -103,7 +103,7 @@ class Picture:
 
     return Picture(repeated)
 
-  # Extra: Sólo para realmente viciosos 
+  # Extra: Solo para realmente viciosos
   def rotate(self):
     """ Devuelve una figura rotada en 90 grados, puede ser en sentido horario
     o antihorario """
@@ -114,4 +114,3 @@ class Picture:
     rotated = [[self.img[rows-1-j][i] for j in range(rows)] for i in range(cols)]
 
     return Picture(rotated) 
-
